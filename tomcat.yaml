@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: tomcatcontainer
-        image: corentdocker/jenkinsapp
+        image: corentdocker/jenkinstomcat:latest
         ports:
         - containerPort: 8080
 ---
