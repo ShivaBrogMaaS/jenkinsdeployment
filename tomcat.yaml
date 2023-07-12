@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: tomcatcontainer
-        image: corentdocker/jtracubuntuimage:latest
+        image: corentdocker/jenkinsapp
         ports:
         - containerPort: 8080
 ---
