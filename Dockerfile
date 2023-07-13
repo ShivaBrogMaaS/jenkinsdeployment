@@ -34,4 +34,4 @@ RUN mv jtrac.war /opt/tomcat/webapps/
 #Port opening for the tomcat
 EXPOSE  8080
 #Start the tomcat
-CMD /opt/tomcat/bin/catalina.sh RUN
+CMD /opt/tomcat/bin/catalina.sh run
