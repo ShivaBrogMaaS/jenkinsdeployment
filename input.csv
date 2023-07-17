@@ -1,0 +1,2 @@
+bucket,acl,policy
+sample-poc-corent-bucket,public-read,policy.json
