@@ -9,13 +9,14 @@ RUN  apt-get -y install unzip
 RUN  apt-get -y install alien
 RUN  apt-get -y install curl
 RUN  apt install -y openjdk-11-jdk
-#set the working directory of a Docker container
+RUN  apt-get update
+#set the working directory of a Docker
 WORKDIR "/app"
 #Tomcat Configuration
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 RUN cd /tmp
-RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.83/bin/apache-tomcat-9.0.83.tar.gz
+RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz
 RUN rm -rvf /opt/tomcat
 RUN mkdir /opt/tomcat
 RUN tar xf apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
@@ -26,11 +27,9 @@ RUN chmod g+x /opt/tomcat/conf
 RUN chown -R tomcat /opt/tomcat/webapps /opt/tomcat/work /opt/tomcat/temp /opt/tomcat/logs
 RUN cd /opt/tomcat/bin
 #Download the require war files for tomcat
-RUN cd /
-RUN curl -O http://j-trac.sourceforge.net/files/jtrac.war
+RUN wget  https://get.jenkins.io/war-stable/2.426.2/jenkins.war -P /tmp
 #Copy the War file to tomcat to webapps folder
-RUN cd /
-RUN mv jtrac.war /opt/tomcat/webapps/
+RUN cp /tmp/jenkins.war /opt/tomcat/webapps/
 #Port opening for the tomcat
 EXPOSE  8080
 #Start the tomcat
