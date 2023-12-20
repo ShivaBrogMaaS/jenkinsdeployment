@@ -6,7 +6,7 @@ RUN  apt-get update
 RUN  apt-get -y install wget
 RUN  apt-get -y install tar
 RUN  apt-get -y install unzip
-RUN  apt-get -y install alien
+#RUN  apt-get -y install alien
 RUN  apt-get -y install curl
 RUN  apt install -y openjdk-11-jdk
 RUN  apt-get update
