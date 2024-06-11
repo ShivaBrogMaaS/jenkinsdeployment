@@ -27,9 +27,9 @@ RUN chmod g+x /opt/tomcat/conf
 RUN chown -R tomcat /opt/tomcat/webapps /opt/tomcat/work /opt/tomcat/temp /opt/tomcat/logs
 RUN cd /opt/tomcat/bin
 #Download the require war files for tomcat
-RUN wget  https://get.jenkins.io/war-stable/2.426.2/jenkins.war -P /tmp
+RUN wget  https://j-trac.sourceforge.io/files/jtrac.war -P /tmp
 #Copy the War file to tomcat to webapps folder
-RUN cp /tmp/jenkins.war /opt/tomcat/webapps/
+RUN cp /tmp/jtrac.war /opt/tomcat/webapps/
 #Port opening for the tomcat
 EXPOSE  8080
 #Start the tomcat
