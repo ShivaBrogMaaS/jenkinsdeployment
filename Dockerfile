@@ -16,7 +16,7 @@ WORKDIR "/app"
 RUN groupadd tomcat
 RUN useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 RUN cd /tmp
-RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz
+RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
 RUN rm -rvf /opt/tomcat
 RUN mkdir /opt/tomcat
 RUN tar xf apache-tomcat-9*tar.gz -C /opt/tomcat --strip-components=1
