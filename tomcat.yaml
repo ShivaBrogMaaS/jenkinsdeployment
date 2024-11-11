@@ -27,6 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: tomcat-service
+  namespace: dev
 spec:
   selector:
     app: tomcatcontainer
